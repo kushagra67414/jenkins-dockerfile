@@ -1,6 +1,9 @@
 FROM ubuntu
-MAINTAINER demousr@gmail.com 
+MAINTAINER kushagra 
 RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install –y nginx 
-CMD [“echo”,”Image created”]
+RUN apt-get update
+RUN apt-get install -y python
+ADD hello.py /home/hello.py
+ADD a.py /home/a.py
+CMD ["/home/hello.py"]
+ENTRYPOINT ["python"]
